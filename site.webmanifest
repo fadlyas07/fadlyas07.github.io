@@ -1,0 +1,10 @@
+{
+  "name": "Muhammad Fadly A. S.",
+  "short_name": "Fadly",
+  "description": "Portofolio Android, Linux, kernel, scripting, dan open source.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8f8ff",
+  "theme_color": "#f8f8ff",
+  "icons": [{"src":"assets/icons/favicon.svg","sizes":"any","type":"image/svg+xml","purpose":"any"}]
+}
