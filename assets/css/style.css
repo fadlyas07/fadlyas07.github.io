@@ -534,3 +534,187 @@ p { color: var(--ink-soft); }
     display: none;
   }
 }
+
+/* =====================================================
+   COMPACT FEATURED PROJECT LAYOUT
+   Main project full width with two projects below
+===================================================== */
+
+@media (min-width: 961px) {
+  .featured-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  /* Proyek utama memenuhi satu baris */
+  .featured-grid .project-main {
+    position: relative;
+    grid-column: 1 / -1;
+    grid-row: auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+    min-height: 500px;
+  }
+
+  /* Gambar proyek utama di sebelah kiri */
+  .featured-grid .project-main .project-art {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+  }
+
+  /* Informasi proyek utama di sebelah kanan */
+  .featured-grid .project-main .project-content {
+    min-width: 0;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    padding: 82px 48px 40px;
+  }
+
+  /*
+   * Memindahkan nomor proyek ke bagian gambar
+   * dan status ke pojok kanan atas kartu
+   */
+  .featured-grid .project-main .project-top {
+    display: contents;
+  }
+
+  .featured-grid .project-main .project-index {
+    position: absolute;
+    top: 28px;
+    left: 28px;
+    z-index: 4;
+  }
+
+  .featured-grid .project-main .status-chip {
+    position: absolute;
+    top: 28px;
+    right: 28px;
+    z-index: 4;
+  }
+
+  .featured-grid .project-main .project-content h3 {
+    margin-bottom: 16px;
+    font-size: clamp(34px, 3.4vw, 45px);
+  }
+
+  .featured-grid .project-main .project-content p {
+    max-width: 520px;
+    margin-bottom: 22px;
+    font-size: 14px;
+  }
+
+  .featured-grid .project-main .text-button {
+    margin-top: auto;
+    padding-top: 28px;
+  }
+
+  /* Dua kartu proyek di baris kedua */
+  .featured-grid > .project-card:not(.project-main) {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .featured-grid > .project-card:not(.project-main) .project-art {
+    min-height: 310px;
+  }
+
+  .featured-grid > .project-card:not(.project-main) .project-content {
+    min-height: 310px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 30px;
+  }
+
+  .featured-grid > .project-card:not(.project-main) .project-content h3 {
+    font-size: clamp(30px, 3vw, 38px);
+  }
+
+  .featured-grid > .project-card:not(.project-main) .text-button {
+    margin-top: auto;
+    padding-top: 22px;
+  }
+}
+
+/* Tablet: semua kartu kembali menjadi satu kolom */
+@media (min-width: 721px) and (max-width: 960px) {
+  .featured-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .featured-grid .project-main {
+    grid-column: auto;
+    grid-row: auto;
+    display: grid;
+    grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  }
+
+  .featured-grid .project-main .project-art {
+    min-height: 420px;
+  }
+
+  .featured-grid .project-main .project-content {
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    padding: 36px;
+  }
+
+  .featured-grid .project-main .text-button {
+    margin-top: auto;
+  }
+}
+
+/* Mobile: kartu ringkas dan tetap nyaman dibaca */
+@media (max-width: 720px) {
+  .featured-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .featured-grid .project-main {
+    grid-column: auto;
+    grid-row: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .featured-grid .project-card {
+    border-radius: 25px;
+  }
+
+  .featured-grid .project-main .project-art {
+    min-height: 300px;
+  }
+
+  .featured-grid .project-card:not(.project-main) .project-art {
+    min-height: 220px;
+  }
+
+  .featured-grid .project-content,
+  .featured-grid .project-main .project-content {
+    min-height: auto;
+    padding: 23px;
+  }
+
+  .featured-grid .project-main .project-content h3,
+  .featured-grid .project-content h3 {
+    font-size: 27px;
+  }
+
+  .featured-grid .project-content p {
+    margin-bottom: 17px;
+  }
+
+  .featured-grid .text-button,
+  .featured-grid .project-main .text-button {
+    margin-top: 22px;
+    padding-top: 0;
+  }
+}
+
