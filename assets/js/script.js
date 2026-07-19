@@ -232,7 +232,7 @@ function createRepoCard(repo) {
    ENGLISH / INDONESIAN LANGUAGE
 ===================================================== */
 
-window.portfolioLanguage = "en";
+window.portfolioLanguage = "id";
 
 function setupLanguageToggle() {
   const toggle = document.getElementById("language-toggle");
@@ -242,20 +242,20 @@ function setupLanguageToggle() {
   const buttons = [...toggle.querySelectorAll("[data-language]")];
 
   /*
-   * English adalah default untuk pengunjung baru.
-   * Pilihan terakhir disimpan pada browser pengunjung.
+   * Indonesian is the default language for first-time visitors.
+   * The visitor's latest language preference is stored in the browser.
    */
-  let savedLanguage = "en";
+  let savedLanguage = "id";
 
   try {
     savedLanguage =
-      localStorage.getItem("fadly-portfolio-language") || "en";
+      localStorage.getItem("fadly-portfolio-language-v2") || "id";
   } catch {
-    savedLanguage = "en";
+    savedLanguage = "id";
   }
 
   if (!["en", "id"].includes(savedLanguage)) {
-    savedLanguage = "en";
+    savedLanguage = "id";
   }
 
   const applyLanguage = language => {
@@ -310,7 +310,7 @@ function setupLanguageToggle() {
 
     try {
       localStorage.setItem(
-        "fadly-portfolio-language",
+        "fadly-portfolio-language-v2",
         language
       );
     } catch {
