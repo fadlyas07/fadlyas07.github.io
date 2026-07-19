@@ -1097,3 +1097,124 @@ p { color: var(--ink-soft); }
   }
 }
 
+/* COMPACT PAGE SPACING START */
+
+/*
+ * Merapatkan jarak antara:
+ * header → hero
+ * hero → karya
+ * karya → informasi
+ * informasi → kontak
+ * kontak → footer
+ */
+
+/* Header ke hero */
+
+.hero {
+  padding-top: 96px !important;
+}
+
+/* Jarak antarseksi utama */
+
+.section {
+  padding-top: 64px !important;
+}
+
+/* Judul section ke konten di bawahnya */
+
+.section-heading {
+  margin-bottom: 28px !important;
+}
+
+/* Footer lebih dekat dengan section kontak */
+
+.footer {
+  padding-top: 24px !important;
+  padding-bottom: 28px !important;
+}
+
+/*
+ * Sedikit merapatkan isi panel informasi tanpa
+ * membuat kontennya terasa sesak.
+ */
+
+.about-panel {
+  margin-bottom: 30px !important;
+}
+
+/* Tablet */
+
+@media (max-width: 960px) {
+  .hero {
+    padding-top: 90px !important;
+  }
+
+  .section {
+    padding-top: 54px !important;
+  }
+
+  .section-heading {
+    margin-bottom: 25px !important;
+  }
+
+  .footer {
+    padding-top: 22px !important;
+    padding-bottom: 25px !important;
+  }
+
+  .about-panel {
+    margin-bottom: 26px !important;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 720px) {
+  body {
+    padding-bottom: 76px !important;
+  }
+
+  .hero {
+    padding-top: 80px !important;
+  }
+
+  .section {
+    padding-top: 44px !important;
+  }
+
+  .section-heading {
+    margin-bottom: 22px !important;
+  }
+
+  .footer {
+    padding-top: 20px !important;
+    padding-bottom: 22px !important;
+  }
+
+  .about-panel {
+    margin-bottom: 22px !important;
+  }
+}
+
+/* Mobile kecil */
+
+@media (max-width: 430px) {
+  .hero {
+    padding-top: 76px !important;
+  }
+
+  .section {
+    padding-top: 38px !important;
+  }
+
+  .section-heading {
+    margin-bottom: 19px !important;
+  }
+
+  .footer {
+    padding-top: 17px !important;
+    padding-bottom: 19px !important;
+  }
+}
+
+/* COMPACT PAGE SPACING END */
