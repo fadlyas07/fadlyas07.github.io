@@ -675,3 +675,445 @@ const LANGUAGE_CONTENT = [
     id: "Username disalin"
   }
 ];
+
+/* =====================================================
+   FULL DYNAMIC HEADER GREETING — BOGOR TIME
+===================================================== */
+
+(() => {
+  const TIME_ZONE = "Asia/Jakarta";
+  const ROTATION_INTERVAL = 4200;
+
+  const greetingData = {
+    morning: {
+      periodIcon: "🌅",
+      greetings: [
+        {
+          text: "Selamat pagi",
+          language: "Indonesia",
+          lang: "id",
+          flag: "🇮🇩"
+        },
+        {
+          text: "Good morning",
+          language: "Inggris",
+          lang: "en",
+          flag: "🇬🇧"
+        },
+        {
+          text: "おはようございます",
+          language: "Jepang",
+          lang: "ja",
+          flag: "🇯🇵"
+        },
+        {
+          text: "좋은 아침이에요",
+          language: "Korea",
+          lang: "ko",
+          flag: "🇰🇷"
+        },
+        {
+          text: "صباح الخير",
+          language: "Arab",
+          lang: "ar",
+          dir: "rtl",
+          flag: "🇸🇦"
+        },
+        {
+          text: "Bonjour",
+          language: "Prancis",
+          lang: "fr",
+          flag: "🇫🇷"
+        },
+        {
+          text: "Guten Morgen",
+          language: "Jerman",
+          lang: "de",
+          flag: "🇩🇪"
+        },
+        {
+          text: "Buenos días",
+          language: "Spanyol",
+          lang: "es",
+          flag: "🇪🇸"
+        },
+        {
+          text: "Buongiorno",
+          language: "Italia",
+          lang: "it",
+          flag: "🇮🇹"
+        }
+      ]
+    },
+
+    afternoon: {
+      periodIcon: "☀️",
+      greetings: [
+        {
+          text: "Selamat siang",
+          language: "Indonesia",
+          lang: "id",
+          flag: "🇮🇩"
+        },
+        {
+          text: "Good afternoon",
+          language: "Inggris",
+          lang: "en",
+          flag: "🇬🇧"
+        },
+        {
+          text: "こんにちは",
+          language: "Jepang",
+          lang: "ja",
+          flag: "🇯🇵"
+        },
+        {
+          text: "좋은 오후예요",
+          language: "Korea",
+          lang: "ko",
+          flag: "🇰🇷"
+        },
+        {
+          text: "نهارك سعيد",
+          language: "Arab",
+          lang: "ar",
+          dir: "rtl",
+          flag: "🇸🇦"
+        },
+        {
+          text: "Bon après-midi",
+          language: "Prancis",
+          lang: "fr",
+          flag: "🇫🇷"
+        },
+        {
+          text: "Guten Tag",
+          language: "Jerman",
+          lang: "de",
+          flag: "🇩🇪"
+        },
+        {
+          text: "Buenas tardes",
+          language: "Spanyol",
+          lang: "es",
+          flag: "🇪🇸"
+        },
+        {
+          text: "Buon pomeriggio",
+          language: "Italia",
+          lang: "it",
+          flag: "🇮🇹"
+        }
+      ]
+    },
+
+    evening: {
+      periodIcon: "🌇",
+      greetings: [
+        {
+          text: "Selamat sore",
+          language: "Indonesia",
+          lang: "id",
+          flag: "🇮🇩"
+        },
+        {
+          text: "Good evening",
+          language: "Inggris",
+          lang: "en",
+          flag: "🇬🇧"
+        },
+        {
+          text: "こんばんは",
+          language: "Jepang",
+          lang: "ja",
+          flag: "🇯🇵"
+        },
+        {
+          text: "좋은 저녁이에요",
+          language: "Korea",
+          lang: "ko",
+          flag: "🇰🇷"
+        },
+        {
+          text: "مساء الخير",
+          language: "Arab",
+          lang: "ar",
+          dir: "rtl",
+          flag: "🇸🇦"
+        },
+        {
+          text: "Bonsoir",
+          language: "Prancis",
+          lang: "fr",
+          flag: "🇫🇷"
+        },
+        {
+          text: "Guten Abend",
+          language: "Jerman",
+          lang: "de",
+          flag: "🇩🇪"
+        },
+        {
+          text: "Buenas tardes",
+          language: "Spanyol",
+          lang: "es",
+          flag: "🇪🇸"
+        },
+        {
+          text: "Buonasera",
+          language: "Italia",
+          lang: "it",
+          flag: "🇮🇹"
+        }
+      ]
+    },
+
+    night: {
+      periodIcon: "🌙",
+      greetings: [
+        {
+          text: "Selamat malam",
+          language: "Indonesia",
+          lang: "id",
+          flag: "🇮🇩"
+        },
+        {
+          text: "Good evening",
+          language: "Inggris",
+          lang: "en",
+          flag: "🇬🇧"
+        },
+        {
+          text: "こんばんは",
+          language: "Jepang",
+          lang: "ja",
+          flag: "🇯🇵"
+        },
+        {
+          text: "편안한 밤 되세요",
+          language: "Korea",
+          lang: "ko",
+          flag: "🇰🇷"
+        },
+        {
+          text: "مساء الخير",
+          language: "Arab",
+          lang: "ar",
+          dir: "rtl",
+          flag: "🇸🇦"
+        },
+        {
+          text: "Bonsoir",
+          language: "Prancis",
+          lang: "fr",
+          flag: "🇫🇷"
+        },
+        {
+          text: "Guten Abend",
+          language: "Jerman",
+          lang: "de",
+          flag: "🇩🇪"
+        },
+        {
+          text: "Buenas noches",
+          language: "Spanyol",
+          lang: "es",
+          flag: "🇪🇸"
+        },
+        {
+          text: "Buonasera",
+          language: "Italia",
+          lang: "it",
+          flag: "🇮🇹"
+        }
+      ]
+    }
+  };
+
+  function getBogorTime() {
+    const parts = new Intl.DateTimeFormat("en-GB", {
+      timeZone: TIME_ZONE,
+      hour: "2-digit",
+      minute: "2-digit",
+      hourCycle: "h23"
+    }).formatToParts(new Date());
+
+    const values = {};
+
+    parts.forEach(part => {
+      if (part.type !== "literal") {
+        values[part.type] = part.value;
+      }
+    });
+
+    return {
+      hour: Number(values.hour || 0),
+      time: `${values.hour || "00"}:${values.minute || "00"}`
+    };
+  }
+
+  function getTimePeriod(hour) {
+    if (hour >= 4 && hour < 11) {
+      return "morning";
+    }
+
+    if (hour >= 11 && hour < 15) {
+      return "afternoon";
+    }
+
+    if (hour >= 15 && hour < 18) {
+      return "evening";
+    }
+
+    return "night";
+  }
+
+  function initializeDynamicHeaderGreeting() {
+    const brand = document.querySelector(".brand");
+
+    if (!brand) return;
+
+    if (typeof window.__dynamicHeaderGreetingCleanup === "function") {
+      window.__dynamicHeaderGreetingCleanup();
+    }
+
+    brand.classList.add("dynamic-greeting");
+
+    brand.innerHTML = `
+      <span class="brand-mark greeting-symbol" aria-hidden="true">
+        <span class="greeting-flag">🇮🇩</span>
+        <span class="greeting-period-icon">🌅</span>
+      </span>
+
+      <span class="brand-text greeting-copy">
+        <strong class="greeting-title">Selamat pagi</strong>
+        <small class="greeting-meta">Indonesia · Bogor</small>
+      </span>
+    `;
+
+    const flagElement = brand.querySelector(".greeting-flag");
+    const periodIconElement = brand.querySelector(
+      ".greeting-period-icon"
+    );
+    const titleElement = brand.querySelector(".greeting-title");
+    const metaElement = brand.querySelector(".greeting-meta");
+
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    let currentPeriod = getTimePeriod(getBogorTime().hour);
+    let greetingIndex = 0;
+    let animationTimeout;
+
+    function applyGreeting() {
+      const bogorTime = getBogorTime();
+      const updatedPeriod = getTimePeriod(bogorTime.hour);
+
+      if (updatedPeriod !== currentPeriod) {
+        currentPeriod = updatedPeriod;
+        greetingIndex = 0;
+      }
+
+      const periodData = greetingData[currentPeriod];
+      const greetings = periodData.greetings;
+      const greeting =
+        greetings[greetingIndex % greetings.length];
+
+      brand.classList.remove(
+        "period-morning",
+        "period-afternoon",
+        "period-evening",
+        "period-night"
+      );
+
+      brand.classList.add(`period-${currentPeriod}`);
+
+      flagElement.textContent = greeting.flag;
+      periodIconElement.textContent = periodData.periodIcon;
+
+      titleElement.textContent = greeting.text;
+      titleElement.lang = greeting.lang;
+      titleElement.dir = greeting.dir || "auto";
+
+      metaElement.textContent =
+        `${greeting.language} · ${bogorTime.time} WIB`;
+
+      metaElement.lang = "id";
+      metaElement.dir = "ltr";
+
+      brand.setAttribute(
+        "aria-label",
+        `${greeting.text}. Bahasa ${greeting.language}. ` +
+        `Waktu Bogor ${bogorTime.time} WIB.`
+      );
+
+      brand.setAttribute(
+        "title",
+        `${greeting.text} — ${greeting.language} · ` +
+        `${bogorTime.time} WIB`
+      );
+    }
+
+    function renderGreeting(animate = true) {
+      window.clearTimeout(animationTimeout);
+
+      if (!animate || reducedMotion) {
+        applyGreeting();
+        return;
+      }
+
+      brand.classList.add("is-changing");
+
+      animationTimeout = window.setTimeout(() => {
+        applyGreeting();
+
+        requestAnimationFrame(() => {
+          brand.classList.remove("is-changing");
+        });
+      }, 240);
+    }
+
+    renderGreeting(false);
+
+    const greetingRotation = window.setInterval(() => {
+      const currentGreetings =
+        greetingData[currentPeriod].greetings;
+
+      greetingIndex =
+        (greetingIndex + 1) % currentGreetings.length;
+
+      renderGreeting(true);
+    }, ROTATION_INTERVAL);
+
+    const bogorClockSync = window.setInterval(() => {
+      const newPeriod = getTimePeriod(getBogorTime().hour);
+
+      if (newPeriod !== currentPeriod) {
+        currentPeriod = newPeriod;
+        greetingIndex = 0;
+        renderGreeting(true);
+        return;
+      }
+
+      applyGreeting();
+    }, 30000);
+
+    window.__dynamicHeaderGreetingCleanup = () => {
+      window.clearInterval(greetingRotation);
+      window.clearInterval(bogorClockSync);
+      window.clearTimeout(animationTimeout);
+    };
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener(
+      "DOMContentLoaded",
+      initializeDynamicHeaderGreeting,
+      { once: true }
+    );
+  } else {
+    initializeDynamicHeaderGreeting();
+  }
+})();
+

@@ -718,3 +718,382 @@ p { color: var(--ink-soft); }
   }
 }
 
+
+/* =====================================================
+   FULL DYNAMIC HEADER GREETING
+===================================================== */
+
+.brand.dynamic-greeting {
+  --greeting-background: rgba(239, 238, 255, 0.88);
+  --greeting-border: rgba(93, 91, 196, 0.13);
+  --greeting-accent: #5d5bc4;
+  --greeting-icon-background: #dedcff;
+  --greeting-glow: rgba(93, 91, 196, 0.15);
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  min-width: 190px;
+  max-width: 220px;
+  height: 56px;
+
+  padding: 5px 13px 5px 5px;
+  border: 1px solid var(--greeting-border);
+  border-radius: 20px;
+
+  color: var(--ink);
+  background:
+    linear-gradient(
+      135deg,
+      var(--greeting-background),
+      rgba(255, 255, 255, 0.82)
+    );
+
+  box-shadow:
+    0 10px 28px var(--greeting-glow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.78);
+
+  overflow: hidden;
+  isolation: isolate;
+
+  transition:
+    background 450ms ease,
+    border-color 450ms ease,
+    box-shadow 450ms ease,
+    transform 220ms ease;
+}
+
+.brand.dynamic-greeting::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+
+  width: 80px;
+  height: 80px;
+  top: -48px;
+  right: -20px;
+
+  border-radius: 50%;
+  background: var(--greeting-accent);
+  opacity: 0.09;
+  filter: blur(2px);
+
+  transition:
+    background 450ms ease,
+    opacity 450ms ease;
+}
+
+.brand.dynamic-greeting:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 14px 34px var(--greeting-glow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+/* Warna pagi */
+
+.brand.dynamic-greeting.period-morning {
+  --greeting-background: rgba(255, 246, 218, 0.92);
+  --greeting-border: rgba(224, 164, 38, 0.2);
+  --greeting-accent: #d99816;
+  --greeting-icon-background: #fff0bc;
+  --greeting-glow: rgba(224, 164, 38, 0.16);
+}
+
+/* Warna siang */
+
+.brand.dynamic-greeting.period-afternoon {
+  --greeting-background: rgba(226, 245, 255, 0.92);
+  --greeting-border: rgba(52, 142, 202, 0.18);
+  --greeting-accent: #348eca;
+  --greeting-icon-background: #d7f0ff;
+  --greeting-glow: rgba(52, 142, 202, 0.15);
+}
+
+/* Warna sore */
+
+.brand.dynamic-greeting.period-evening {
+  --greeting-background: rgba(255, 234, 222, 0.92);
+  --greeting-border: rgba(218, 108, 66, 0.18);
+  --greeting-accent: #d86d43;
+  --greeting-icon-background: #ffddca;
+  --greeting-glow: rgba(218, 108, 66, 0.16);
+}
+
+/* Warna malam */
+
+.brand.dynamic-greeting.period-night {
+  --greeting-background: rgba(232, 231, 255, 0.92);
+  --greeting-border: rgba(92, 87, 190, 0.18);
+  --greeting-accent: #5c57be;
+  --greeting-icon-background: #dedcff;
+  --greeting-glow: rgba(92, 87, 190, 0.17);
+}
+
+/* Logo bahasa dan ikon periode */
+
+.brand.dynamic-greeting .greeting-symbol {
+  position: relative;
+  flex: 0 0 auto;
+
+  width: 46px;
+  height: 46px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 16px 16px 16px 7px;
+
+  color: var(--ink);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.88),
+      var(--greeting-icon-background)
+    );
+
+  box-shadow:
+    0 8px 20px var(--greeting-glow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+  transition:
+    opacity 240ms ease,
+    transform 240ms ease,
+    background 450ms ease,
+    box-shadow 450ms ease;
+}
+
+.brand.dynamic-greeting .greeting-flag {
+  display: block;
+  font-size: 22px;
+  line-height: 1;
+  transform: translateY(-1px);
+}
+
+.brand.dynamic-greeting .greeting-period-icon {
+  position: absolute;
+  right: -4px;
+  bottom: -4px;
+
+  width: 20px;
+  height: 20px;
+
+  display: grid;
+  place-items: center;
+
+  border: 2px solid rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+
+  background: var(--greeting-icon-background);
+  box-shadow: 0 4px 10px var(--greeting-glow);
+
+  font-size: 10px;
+  line-height: 1;
+}
+
+/* Teks sapaan */
+
+.brand.dynamic-greeting .greeting-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+
+  min-width: 0;
+  max-width: 150px;
+
+  line-height: 1.1;
+
+  transition:
+    opacity 240ms ease,
+    transform 240ms ease,
+    filter 240ms ease;
+}
+
+.brand.dynamic-greeting .greeting-title {
+  display: block;
+
+  max-width: 100%;
+  overflow: hidden;
+
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.2;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  unicode-bidi: plaintext;
+}
+
+.brand.dynamic-greeting .greeting-meta {
+  display: block;
+
+  max-width: 100%;
+  margin-top: 4px;
+  overflow: hidden;
+
+  color: var(--greeting-accent);
+  font-size: 8.5px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.015em;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  transition: color 450ms ease;
+}
+
+/* Animasi pergantian seluruh elemen */
+
+.brand.dynamic-greeting.is-changing .greeting-symbol {
+  opacity: 0;
+  transform: scale(0.78) rotate(-8deg);
+}
+
+.brand.dynamic-greeting.is-changing .greeting-copy {
+  opacity: 0;
+  transform: translateX(9px);
+  filter: blur(3px);
+}
+
+.brand.dynamic-greeting:not(.is-changing) .greeting-symbol {
+  animation: greeting-symbol-enter 420ms ease both;
+}
+
+.brand.dynamic-greeting:not(.is-changing) .greeting-copy {
+  animation: greeting-copy-enter 420ms ease both;
+}
+
+@keyframes greeting-symbol-enter {
+  from {
+    opacity: 0;
+    transform: scale(0.78) rotate(8deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}
+
+@keyframes greeting-copy-enter {
+  from {
+    opacity: 0;
+    transform: translateX(-8px);
+    filter: blur(3px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+  }
+}
+
+/* Tablet dan mobile */
+
+@media (max-width: 720px) {
+  .brand.dynamic-greeting {
+    min-width: 170px;
+    max-width: 185px;
+    height: 50px;
+
+    gap: 9px;
+    padding: 5px 10px 5px 5px;
+    border-radius: 18px;
+  }
+
+  .brand.dynamic-greeting .greeting-symbol {
+    width: 40px;
+    height: 40px;
+    border-radius: 14px 14px 14px 6px;
+  }
+
+  .brand.dynamic-greeting .greeting-flag {
+    font-size: 19px;
+  }
+
+  .brand.dynamic-greeting .greeting-period-icon {
+    right: -3px;
+    bottom: -3px;
+
+    width: 18px;
+    height: 18px;
+
+    font-size: 9px;
+  }
+
+  .brand.dynamic-greeting .greeting-copy {
+    max-width: 120px;
+  }
+
+  .brand.dynamic-greeting .greeting-title {
+    font-size: 11.5px;
+  }
+
+  .brand.dynamic-greeting .greeting-meta {
+    margin-top: 3px;
+    font-size: 7.5px;
+  }
+}
+
+/*
+ * Mengaktifkan kembali teks brand di layar kecil.
+ * Aturan lama menyembunyikan .brand-text pada lebar 420px.
+ */
+
+@media (max-width: 420px) {
+  .brand.dynamic-greeting {
+    min-width: 154px;
+    max-width: 166px;
+  }
+
+  .brand.dynamic-greeting .brand-text.greeting-copy {
+    display: flex;
+  }
+
+  .brand.dynamic-greeting .greeting-copy {
+    max-width: 106px;
+  }
+
+  .brand.dynamic-greeting .greeting-title {
+    font-size: 10.5px;
+  }
+
+  .brand.dynamic-greeting .greeting-meta {
+    font-size: 7px;
+  }
+}
+
+@media (max-width: 350px) {
+  .brand.dynamic-greeting {
+    min-width: 142px;
+    max-width: 150px;
+  }
+
+  .brand.dynamic-greeting .greeting-symbol {
+    width: 38px;
+    height: 38px;
+  }
+
+  .brand.dynamic-greeting .greeting-copy {
+    max-width: 94px;
+  }
+}
+
+/* Aksesibilitas: nonaktifkan animasi bila diminta perangkat */
+
+@media (prefers-reduced-motion: reduce) {
+  .brand.dynamic-greeting,
+  .brand.dynamic-greeting *,
+  .brand.dynamic-greeting::before {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
